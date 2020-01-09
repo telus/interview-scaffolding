@@ -1,0 +1,13 @@
+const express = require('express')
+const compression = require('compression')
+const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser')
+const url = require('url')
+const router = require('./router')
+
+const app = express()
+app.use(compression())
+app.use(bodyParser.json())
+app.use(cookieParser())
+app.use(router)
+app.listen(8888, () => console.log('Example app listening on port 8888!'))
